@@ -1,8 +1,9 @@
 # ignore build directory
 **build/
-*lib/
+**build-*/
+**build_*/
 *.vscode
-
+Doc
 
 # Prerequisites
 *.d
