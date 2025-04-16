@@ -325,8 +325,8 @@ int main(int argc, char** argv)
 	while (!subscribed)
 		mysleep(100);
 
-	if (finished)
-		goto exit;
+	if (finished) 
+		goto exit; 
 
 	while (!finished)
 		mysleep(100);
