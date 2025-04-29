@@ -1,15 +1,16 @@
 /**
- * Author:   KeeneChen
- * DateTime: 2022.07.02-15:16:59
- * Description: 两数比较大小
+ * @file    : 两数比较大小.c
+ * @author  : KeeneChen <keenechen@qq.com>
+ * @date    : 2025.04.29-15:13:57
+ * @details : 两数比较大小
  */
 
 #include <stdio.h>
 
 int main(void)
 {
-    int a = 1;
-    int b = 2;
+    int a   = 1;
+    int b   = 2;
     int max = 0;
 
     if (a > b)
