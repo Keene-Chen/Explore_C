@@ -1,7 +1,7 @@
 # file    : kc_conf.cmake
 # author  : KeeneChen <keenechen@qq.com>
 # date    : 2024.10.21-16:04:23
-# details : kc_conf
+# details : cmake 配置文件
 
 # >>> color define >>>
 macro(enable_kc_colors)

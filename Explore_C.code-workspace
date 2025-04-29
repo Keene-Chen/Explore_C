@@ -3,5 +3,20 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"commentTranslate.hover.enabled": true,
+		"commentTranslate.source": "Bing",
+		"clangd.arguments": [
+			"--compile-commands-dir=${workspaceFolder}/cmake-ninja",
+			"--background-index",
+			"--all-scopes-completion",
+			"--completion-style=detailed",
+			"--header-insertion=never",
+			"--pch-storage=memory",
+			"--enable-config",
+			"--pretty",
+			"--clang-tidy",
+		],
+	}
 }

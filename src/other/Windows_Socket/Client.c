@@ -1,7 +1,8 @@
 /**
- * Author:   KeeneChen
- * DateTime: 2021.10.16-10:12:10
- * Description: Windows Socket Clinet
+ * @file    : Client.c
+ * @author  : KeeneChen <keenechen@qq.com>
+ * @date    : 2021.10.16-10:12:10
+ * @details : Windows Socket Clinet
  */
 
 #include "./Socket.h"
@@ -24,22 +25,23 @@ int main(void)
     WSAStartup(MAKEWORD(2, 2), &wsadata);
 
     // 2.创建套接字
-    SOCKET clientSock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP); // 返回值为SOCKET类型句柄，类似Linux文件标识符
+    SOCKET clientSock =
+        socket(AF_INET, SOCK_STREAM, IPPROTO_TCP); // 返回值为SOCKET类型句柄，类似Linux文件标识符
 
     // 3.向服务器发起请求
     SOCKADDR_IN sockAddr;
     memset(&sockAddr, 0, sizeof(sockAddr));
-    sockAddr.sin_family = AF_INET;
-    sockAddr.sin_port = htons(PORT);
+    sockAddr.sin_family      = AF_INET;
+    sockAddr.sin_port        = htons(PORT);
     sockAddr.sin_addr.s_addr = inet_addr(IP);
     connect(clientSock, (SOCKADDR *)&sockAddr, sizeof(sockAddr));
 
     // 4.接收服务器数据
-    char recvBuf[BUF_SIZE] = {0};
+    char recvBuf[BUF_SIZE] = { 0 };
     recv(clientSock, recvBuf, BUF_SIZE, 0);
 
     // 5.打印接收数据
-    printf("Messages form Server: %s\n",recvBuf);
+    printf("Messages form Server: %s\n", recvBuf);
 
     // 6.关闭套接字
     closesocket(clientSock);

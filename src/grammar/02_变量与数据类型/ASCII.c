@@ -1,7 +1,8 @@
 /**
- * Author:   KeeneChen
- * DateTime: 2022.07.02-14:56:22
- * Description: 获取字符ASCII码
+ * @file    : ASCII.c
+ * @author  : KeeneChen <keenechen@qq.com>
+ * @date    : 2022.07.02-14:56:22
+ * @details : 获取字符ASCII码
  */
 
 #include <stdio.h>

@@ -1,7 +1,8 @@
 /**
- * Author:   KeeneChen
- * DateTime: 2021.10.16-09:27:51
- * Description: Windows Socket Server
+ * @file    : Server.c
+ * @author  : KeeneChen <keenechen@qq.com>
+ * @date    : 2021.10.16-09:27:51
+ * @details : Windows Socket Server
  */
 
 #include "./Socket.h"
@@ -25,13 +26,14 @@ int main(void)
     WSAStartup(wVersionRequested, &wsadata);
 
     // 2.创建套接字
-    SOCKET serverSock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP); // 返回值为SOCKET类型句柄，类似Linux文件标识符
+    SOCKET serverSock =
+        socket(AF_INET, SOCK_STREAM, IPPROTO_TCP); // 返回值为SOCKET类型句柄，类似Linux文件标识符
 
     // 3.绑定套接字
     SOCKADDR_IN sockAddr;
     memset(&sockAddr, 0, sizeof(sockAddr));
-    sockAddr.sin_family = AF_INET;
-    sockAddr.sin_port = htons(PORT);
+    sockAddr.sin_family      = AF_INET;
+    sockAddr.sin_port        = htons(PORT);
     sockAddr.sin_addr.s_addr = inet_addr(IP);
     bind(serverSock, (SOCKADDR *)&sockAddr, sizeof(sockAddr));
 
@@ -40,7 +42,7 @@ int main(void)
 
     // 5.接收客户端请求
     SOCKADDR_IN clientAddr;
-    int size = sizeof(SOCKADDR);
+    int size          = sizeof(SOCKADDR);
     SOCKET clientSock = accept(serverSock, (SOCKADDR *)&clientAddr, &size);
 
     // 6.先客户端发送数据
